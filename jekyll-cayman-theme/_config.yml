@@ -1,0 +1,17 @@
+# Setup
+title:        Welcome to hixguru
+tagline:      hixguru의 페이지에 오신 것을 환영합니다 :D
+baseurl:      ""
+paginate:     1
+
+# About/contact
+author:
+  name:       hixguru
+  url:        http://hixguru.github.io
+
+# Gems
+gems:
+  - jekyll-paginate
+
+#Others
+markdown: kramdown
