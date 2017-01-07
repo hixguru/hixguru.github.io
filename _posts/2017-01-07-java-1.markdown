@@ -36,50 +36,52 @@ b = a;
 
 일반적인(?) 형태의 클래스를 만들어 보자
 
-    public class Lol {
-        public static void main(String... args) {
-            Champions vayne = null;
-            Champions ezreal = null;
+```java
+public class Lol {
+    public static void main(String... args) {
+        Champions vayne = null;
+        Champions ezreal = null;
 
-            vayne = new Champions();
-            vayne.setVoice("어둠에 빠진 자들을 사냥해볼까");
-            vayne.setDamage(56);
+        vayne = new Champions();
+        vayne.setVoice("어둠에 빠진 자들을 사냥해볼까");
+        vayne.setDamage(56);
 
-            System.out.println("vayne's voice is " + vayne.getVoice());
-            System.out.println("vayne's damage is " + vayne.getDamage());
+        System.out.println("vayne's voice is " + vayne.getVoice());
+        System.out.println("vayne's damage is " + vayne.getDamage());
 
-            ezreal = vayne;
-            ezreal.setVoice("내 솜씨를 제대로 보여줄 시간이군!");
-            ezreal.setDamage(55);
+        ezreal = vayne;
+        ezreal.setVoice("내 솜씨를 제대로 보여줄 시간이군!");
+        ezreal.setDamage(55);
 
-            System.out.println("ezreal's voice is " + ezreal.getVoice());
-            System.out.println("ezreal's damage is " + ezreal.getDamage());
+        System.out.println("ezreal's voice is " + ezreal.getVoice());
+        System.out.println("ezreal's damage is " + ezreal.getDamage());
 
-            System.out.println("vayne's voice is " + vayne.getVoice());
-            System.out.println("vayne's damage is " + vayne.getDamage());
-        }
+        System.out.println("vayne's voice is " + vayne.getVoice());
+        System.out.println("vayne's damage is " + vayne.getDamage());
+    }
+}
+
+class Champions {
+    private String voice;
+    private int damage;
+
+    public void setVoice(String voice) {
+        this.voice = voice;
     }
 
-    class Champions {
-        private String voice;
-        private int damage;
-
-        public void setVoice(String voice) {
-            this.voice = voice;
-        }
-
-        public void setDamage(int damage) {
-            this.damage = damage;
-        }
-
-        public String getVoice() {
-            return voice;
-        }
-
-        public int getDamage() {
-            return damage;
-        }
+    public void setDamage(int damage) {
+        this.damage = damage;
     }
+
+    public String getVoice() {
+        return voice;
+    }
+
+    public int getDamage() {
+        return damage;
+    }
+}
+```
 
 `Champions vayne = null` : 참조값을 저장할 수 있는 참조 변수의 메모리(4byte)는 생성되지만 참조변수는 null값을 가진다.
 
