@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
-gemspec
 
-gem 'jekyll'
-gem 'jekyll-paginate'
-gem 'kramdown'
-gem 'pygments.rb'
+# 'github-pages' includes 'jekyll' gem 
+gem 'github-pages'
+gem 'bourbon'
+gem 'jemoji'
