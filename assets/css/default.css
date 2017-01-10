@@ -272,7 +272,6 @@ blockquote, pre, .message {
   margin-top: inherit;
   color: #7a7a7a;
   font-size: 15px;
-  font-style: italic;
 }
 
 blockquote {
@@ -284,6 +283,7 @@ blockquote p {
 	margin-bottom: 0px;
 	color: #686f76;
 	font-size: 14px;
+	font-style: italic;
 }
 
 .message {
