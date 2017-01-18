@@ -40,9 +40,38 @@ date: "2017-01-10 22:14"
   - 모든 클래스는 기본적으로 생성자를 가져야하며, 따로 명시한 생성자가 없을 경우 컴파일러는 클래스 이름과 동일한 `디폴트 생성자`를 만든다.
 
   - 생성자의 특징
-    1. 리턴 타입이 없다.
-    2. 클래스 이름과 동일하다
-    3. 생성자는 객체의 메모리 생성 직후 호출된다.(사용자가 임의로 호출할 수 없다. this와 super를 이용하는 경우를 제외하고)
-    4. 주로 객체 생성 후 필요한 초기화 작업을 한다.
+    - 리턴 타입이 없다.
+    - 클래스 이름과 동일하다
+    - 생성자는 객체의 메모리 생성 직후 호출된다.(사용자가 임의로 호출할 수 없다. this와 super를 이용하는 경우를 제외하고)
+    - 주로 객체 생성 후 필요한 초기화 작업을 한다.
+
 
 - `상속`을 받을 경우 부모 클래스 > 자식 클래스의 생성자 순으로 호출되며 멤버 메소드는 상속 받지만 생성자는 상속 받지 않는다.
+
+- this()
+  1. this는 생성자를 포함하여 생성되는 메소드가 만들어질 때 컴파일러가 자동으로 추가하는 첫번째 매개변수이며, 자기 자신을 참조하는 가상의 매개변수이다.(그렇기 때문에 멤버 메소드 내에서만 사용이 가능하다)
+  2. 지역변수와 멤버 변수를 구분할 때 사용한다. `this.name = name;` (클래스 내에서 멤버변수를 사용한다면 this는 명시하지 않아도 무방하다.)
+  3. this를 독자적으로 사용한다면, 자신의 참조값 자체를 의미한다.
+  4. `this(optionalParam);` 은 생성자를 호출하며, 해당 매개변수 형식에 맞는 생성자를 호출한다.
+  ```java
+  public class Test {
+      private String firstName;
+      private String lastName;
+
+      public Test(String firstName) {
+          this.firstName = firstName;
+          System.out.println("firstName is " + firstName);
+      }
+
+      public Test(String firstName, String lastName) {
+          this(firstName);
+          this.lastName = lastName;
+          System.out.println("my name is " + firstName + " " + lastName);
+      }
+
+      public static void main(String... args) {
+          Test father = new Test("Hwanik", "Kim");
+      }
+  }
+  ```
+    - this를 이용한 생성자 호출은 다른 어떤 작업보다 선행되어야 하기 때문에, this()호출 이전에 다른 작업도 할 수 없다.
