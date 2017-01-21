@@ -77,3 +77,45 @@ date: "2017-01-10 22:14"
   ```
 
     - this를 이용한 생성자 호출은 다른 어떤 작업보다 선행되어야 하기 때문에, this()호출 이전에 다른 작업도 할 수 없다.
+
+- super: 상위 클래스를 참조할 수 있는 가상의 참조 변수
+  - 오버라이딩(Overiding)을 할 때 부모 클래스의 해당 메소드는 무시된다. 그러나 본래 부모의 메소드를 사용하고자 할때는 super.foobar()로 접근하면 된다.
+  - 하위 클래스의 인스턴스를 생성하기 위해서는 부모 클래스의 생성자가 호출된 후에 자식 클래스의 생성자가 호출된다. 하지만 매개변수가 있는 생성자라면?
+
+```java
+public class SuperFather {
+    private String name;
+
+    public SuperFather(String name) {
+        this.name = name;
+        System.out.println("call father");
+    }
+
+    public void getName() {
+        System.out.println("father name is " + name);
+    }
+}
+
+class SuperSon extends SuperFather {
+    private String name;
+
+    public SuperSon(String name) {
+        /**
+         * 부모 클래스에 매개변수가 없는 default 생성자가 있다면 매개변수가 있는 생성자는 선택적으로 호출하면 된다.
+         * 부모 클래스가 default 생성자 없이 매개변수를 갖는 생성자만 있다면(설계의 문제이거나) 기능적으로 부모 클래스의 생성자가 올바르게 호출되는지 확인할 필요가 있다.
+         */
+        super(name);
+        this.name = name;
+    }
+
+    public void getName() {
+        super.getName();
+        System.out.println("son name is " + name);
+    }
+
+    public static void main(String[] args) {
+        SuperSon son = new SuperSon("tta");
+        son.getName();
+    }
+}
+```
