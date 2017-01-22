@@ -103,3 +103,5 @@ interface Champion {
     void useSkill(int type);
 }
 ```
+
+간단한 내용은 여기까지 하고 다음 시간에는 다중상속과 인터페이스에 대해서 조금 더 깊게 알아보자 이만 안녕~
