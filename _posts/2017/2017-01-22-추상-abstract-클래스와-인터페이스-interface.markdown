@@ -108,6 +108,6 @@ interface Champion {
 ```
 
 #### 결과
-![vayne과 ezreal의 값이 공통적으로 출력되는 것을 볼 수 있다.](../../../assets/images/interface.png)
+![interface](../../../assets/images/interface.png)
 
 간단한 내용은 여기까지 하고 다음 시간에는 다중상속과 인터페이스에 대해서 조금 더 깊게 알아보자 이만 안녕~
