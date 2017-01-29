@@ -119,3 +119,7 @@ class SuperSon extends SuperFather {
     }
 }
 ```
+
+- 모든 클래스는 Object(최상위 클래스)를 상속받는다. `extends Object`
+
+- 다운 캐스팅 : 업캐스팅 된 객체를 다시 원래의 클래스로 형변환 시켜주는 작업.
