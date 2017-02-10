@@ -123,3 +123,5 @@ class SuperSon extends SuperFather {
 - 모든 클래스는 Object(최상위 클래스)를 상속받는다. `extends Object`
 
 - 다운 캐스팅 : 업캐스팅 된 객체를 다시 원래의 클래스로 형변환 시켜주는 작업.
+
+- 쓰레드(Thread): 쓰레드는 하나의 프로세스 내에서 `동시에` 여러 동작을 수행하기 위한 `메소드(기능)`의 단위이다.
